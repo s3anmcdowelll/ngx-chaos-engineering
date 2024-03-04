@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "nxg-chaos-engineering": {
+    "ngx-chaos-engineering": {
       "projectType": "library",
-      "root": "projects/nxg-chaos-engineering",
-      "sourceRoot": "projects/nxg-chaos-engineering/src",
+      "root": "projects/ngx-chaos-engineering",
+      "sourceRoot": "projects/ngx-chaos-engineering/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/nxg-chaos-engineering/ng-package.json"
+            "project": "projects/ngx-chaos-engineering/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/nxg-chaos-engineering/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ngx-chaos-engineering/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/nxg-chaos-engineering/tsconfig.lib.json"
+              "tsConfig": "projects/ngx-chaos-engineering/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,7 +27,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/nxg-chaos-engineering/tsconfig.spec.json",
+            "tsConfig": "projects/ngx-chaos-engineering/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"

@@ -1,1 +1,1 @@
-export const environment = { requestUrl: 'https://jsonplaceholder.typicode.com/todos/1' };
+export const environment = { requestUrl: 'https://httpstat.us/200' };
