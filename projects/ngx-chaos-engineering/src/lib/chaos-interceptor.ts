@@ -1,14 +1,13 @@
 import { HttpErrorResponse, HttpHandlerFn, HttpInterceptorFn, HttpRequest } from "@angular/common/http";
-import { inject } from "@angular/core";
 import { throwError, timer, switchMap } from "rxjs";
-import { CHAOS_CONFIG } from "./chaos-config";
+import { getGetChaosConfig } from "./chaos-config";
 
 export const chaosInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>, next: HttpHandlerFn)=>{
     if (!shouldAddChaos()) {
         return next(req);
     }
 
-    const delay$ = timer(getDelay());
+    const delay$ = timer(getGetChaosConfig().delay);
     
     if (!isFailureChanceMet()) {
         return delay$.pipe(switchMap(() => next(req)));
@@ -27,12 +26,8 @@ export const chaosInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>, n
     );
 }
 
-const shouldAddChaos = () => inject(CHAOS_CONFIG).chaosOn ?? false;
+const shouldAddChaos = () => getGetChaosConfig().chaosOn;
 
-const getDelay = () => inject(CHAOS_CONFIG).delay ?? 2000;
-
-const isFailureChanceMet = () => getRandomNumberBetween1And100() <= getFailureChanceOutOf100();
+const isFailureChanceMet = () => getRandomNumberBetween1And100() <= getGetChaosConfig().failureChanceOutOf100;
 
 const getRandomNumberBetween1And100 = () => Math.floor(Math.random() * 100) + 1;
-
-const getFailureChanceOutOf100 = () => inject(CHAOS_CONFIG).failureChanceOutOf100 ?? 50;
