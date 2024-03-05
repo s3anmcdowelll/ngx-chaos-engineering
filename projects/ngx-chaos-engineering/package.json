@@ -2,11 +2,28 @@
   "name": "ngx-chaos-engineering",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^17.2.0",
-    "@angular/core": "^17.2.0"
+    "@angular/common": ">=17.2.0",
+    "@angular/core": ">=17.2.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "license": "MIT",
+  "keywords": [
+    "ngx",
+    "chaos",
+    "engineering",
+    "angular"
+  ],
+  "author": "s3anmcdowell@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s3anmcdowelll/ngx-chaos-engineering.git"
+  },
+  "bugs": {
+    "url": "https://github.com/s3anmcdowelll/ngx-chaos-engineering/issues",
+    "email": "s3anmcdowell@gmail.com"
+  },
+  "homepage": "https://github.com/s3anmcdowelll/ngx-chaos-engineering#readme"
 }
