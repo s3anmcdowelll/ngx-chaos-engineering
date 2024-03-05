@@ -8,13 +8,13 @@ export const chaosInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>, n
         return next(req);
     }
 
-    const delay = timer(getDelay());
+    const delay$ = timer(getDelay());
     
     if (!isFailureChanceMet()) {
-        return delay.pipe(switchMap(() => next(req)));
+        return delay$.pipe(switchMap(() => next(req)));
     }
 
-    return delay
+    return delay$
     .pipe(
         switchMap(() => throwError(() => new HttpErrorResponse(
             {
