@@ -3,4 +3,4 @@
  */
 
 export * from './lib/chaos-interceptor';
-export * from './lib/chaos-config';
+export * from './lib/chaos-config.service';
