@@ -1,0 +1,62 @@
+#chaos-tracker-box{
+    background: white;
+    box-shadow: 5px 5px 0px 0px lightgray;
+    height: 100px;
+    width: 300px;
+    overflow: auto;
+    font-family: monospace;
+    position: fixed;
+    margin: 10px;
+    right:0;
+    bottom:0;
+    border: 1px solid grey;
+}
+
+td{
+    padding:2px;
+}
+
+thead{
+    position: sticky;
+    top:0;
+    background: white;
+    font-weight: bold;
+}
+
+.chaos-btn{
+    border: none;
+    border-radius: 2px;
+    color: white;
+} 
+
+.chaos-success{
+    background: green;
+}
+
+.chaos-success:hover{
+    background: darkgreen;
+}
+
+.chaos-fail{
+    background: red;
+}
+
+.chaos-fail:hover{
+    background: darkred;
+}
+
+.chaos-time{
+    min-width: 65px;
+}
+
+.chaos-method{
+    min-width: 50px;
+}
+
+.chaos-action{
+    min-width: 70px;
+}
+
+.chaos-path{
+    min-width: 65px;
+}

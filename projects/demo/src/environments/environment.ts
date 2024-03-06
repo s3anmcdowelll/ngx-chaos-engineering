@@ -1,9 +1,12 @@
-import { ChaosLoggingLevel } from "../../../ngx-chaos-engineering/src/lib/chaos-logging.service";
+import { ChaosLoggingLevel } from "ngx-chaos-engineering";
+import { ChaosMode } from "ngx-chaos-engineering";
 
 export const environment = {
-     requestUrl: 'https://httpstat.us/200' ,
+     requestUrl: 'https://jsonplaceholder.typicode.com/todos/1' ,
      chaosConfig: {
-        chaosOn: true,
+        // chaosMode: ChaosMode.Off,
+        // chaosMode: ChaosMode.Configured,
+        chaosMode: ChaosMode.Controlled,
         delay: 3000,
         failureChanceOutOf100:  75,
         randomDelay: {

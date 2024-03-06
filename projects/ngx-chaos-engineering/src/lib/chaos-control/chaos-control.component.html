@@ -1,0 +1,27 @@
+@if(shouldShowChaosControl){
+    <div id="chaos-tracker-box">
+        <table>
+            <thead>
+                <tr>
+                    <td class="chaos-time">Time</td>
+                    <td class="chaos-method">Method</td>
+                    <td class="chaos-action">Action</td>
+                    <td class="chaos-path">Path</td>
+                </tr>
+            </thead>
+            <tbody>
+            @for (req of trackedRequests(); track req.id) {
+                <tr>
+                    <td>{{req.timeStamp.toLocaleTimeString()}}</td>
+                    <td>{{req.method}}</td>
+                    <td>
+                        <button class="chaos-btn chaos-success" (click)="complete(req.id)">play</button>
+                        <button class="chaos-btn chaos-fail" (click)="fail(req.id)">fail</button>
+                    </td>
+                    <td>{{req.pathName}}</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}

@@ -3,11 +3,12 @@ import { ChangeDetectionStrategy, Component, WritableSignal, signal } from '@ang
 import { Observable, catchError, of, tap} from 'rxjs';
 import { environment } from '../environments/environment';
 import { AsyncPipe, JsonPipe } from '@angular/common';
+import { ChaosControlComponent } from 'ngx-chaos-engineering';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [JsonPipe, AsyncPipe],
+  imports: [JsonPipe, AsyncPipe, ChaosControlComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush

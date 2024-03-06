@@ -9,7 +9,7 @@ export class ChaosConfigService{
         const configInput = inject(CHAOS_CONFIG);
         
         this.chaosConfig = {
-            chaosOn: configInput.chaosOn ?? false,
+            chaosMode: configInput.chaosMode ?? ChaosMode.Off,
             delay: configInput.delay ?? 2000,
             failureChanceOutOf100: configInput.failureChanceOutOf100 ?? 50,
             randomDelay: configInput.randomDelay ?? null,
@@ -20,7 +20,7 @@ export class ChaosConfigService{
 export const CHAOS_CONFIG = new InjectionToken<Partial<ChaosConfig>>('chaos.config', { factory: () => { return {}; } });
 
 export type ChaosConfig = {
-    chaosOn: boolean
+    chaosMode: ChaosMode
     delay: number,
     randomDelay: {
         min: number,
@@ -32,4 +32,10 @@ export type ChaosConfig = {
 
 export const provideChaosConfig = (config: Partial<ChaosConfig>): Provider => {
     return { provide: CHAOS_CONFIG, useValue: config }
+}
+
+export enum ChaosMode{
+    Off,
+    Configured,
+    Controlled
 }
