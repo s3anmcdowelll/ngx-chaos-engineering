@@ -1,6 +1,6 @@
 {
   "name": "ngx-chaos-engineering",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": ">=17.2.0",
     "@angular/core": ">=17.2.0"
@@ -16,7 +16,9 @@
     "engineering",
     "angular",
     "test",
-    "testing"
+    "testing",
+    "fail",
+    "failure"
   ],
   "author": "s3anmcdowell@gmail.com",
   "repository": {
