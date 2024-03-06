@@ -1,5 +1,4 @@
-import { ChaosLoggingLevel } from "ngx-chaos-engineering";
-import { ChaosMode } from "ngx-chaos-engineering";
+import { ChaosLoggingLevel, ChaosMode} from "ngx-chaos-engineering";
 
 export const environment = {
      requestUrl: 'https://jsonplaceholder.typicode.com/todos/1' ,
